@@ -1,59 +1,60 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fe en la Red</title>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link rel="stylesheet" type="text/css" href="css/estilos.css">
+  <link rel="stylesheet" type="text/css" media="all" href="css/mediastyle.css">
+  <link rel="stylesheet" type="text/css" href="css/menu.css">
+  <link rel="stylesheet" type="text/css" href="css/mediastyleMenu.css">
+</head>
+<body>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" media="all" href="css/mediastyle.css">
+<div style="width: 100%; height: 80px; background-color: none;">
+<nav>
+ <a href="index.php"> <div id="logo"><img src="img/logo3.png" height="70px;"></div></a>
 
-
-
-    <style>
-      footer{
-        width: 100%;
-        height: 80px;
-        background-color: black;
-        text-align: center;
-        padding-top: 30px;
-        color: white;
-      }
-
-  </style>
-
-    <title>Fe at Network!</title>
-  </head>
-  <body>
-    
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="index.php">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="index.php#conviertete">Conviertete en Proveedor</a>
+  
+    <ul id="opciones">
+      <li id="item"><a href="#conocenos" style="color: #003e63">Conocenos</a></li>
+      <li id="item"><a href="#proveedor" style="color: #003e63">Proveedores</a></li>
+      <li id="item"><a href="#escribenos" style="color: #003e63">Contactanos</a></li>
+      <li id="item"><a href="#conocenos" style="color: #003e63">Crear Cuenta</a></li>
+      <a href="app/index.php"><li id="item" class="iniciarSeccion">Iniciar Seccion</li></a>
     </ul>
-  </div>
-  <a class="nav-link" href="crearCuenta.php" style="float: right; color: white;">Crear Cuenta</a>
+
+  <a href="#"><div id="iconSmart" id="iconSmart"><img src="img/menu.png" height="35px;"></div></a>
 </nav>
+</div>
 
 
 
-<section>
+<div id="menuSmart">
+  
+  <a href="#conocenos2"><div>Conocenos</div></a>
+  <hr>
+  <a href="#proveedor"><div>Proveedor</div></a>
+  <hr>
+  <a href="#escribenos"><div>Contactanos</div></a>
+  <hr>
+  <a href="#conocenos2"><div>Crear Cuenta</div></a>
+  <hr>
+  <a href="app/index.php"><a href="#"><div>Iniciar Seccion</div></a></a>
+  <hr>
+</div>
+
+
+
+
+<div class="recuperar-cuenta">
 
 <?php
     if (isset($_POST['recuperar'])){
 
 
-      include ("cnx.php");
+      include ("app/cnx.php");
       $email = $_POST['email'];
       $ssql = mysql_query("SELECT * FROM usuario WHERE email='$email'");
 
@@ -114,11 +115,11 @@
                       <div class="col-lg-4" style="background-color: none; height: auto; text-align: none; margin-top: 50px; margin-bottom: 100px; text-align: center;">
                         
                         <form method="post" action="#">
-                          <label>Coloca la direccion de correo electronico registrada.</label>
+                          <label>Coloca la direccion de correo electronico registrada.</label><br><br>
                           <input type="email" name="email" placeholder="tu@correo.com">
                           <p><font color="red">El correo ingresado no se encuentra registrado.</font></p>
                           <br><br>
-                          <input type="submit" name="recuperar" value="Recuperar Contraseña" style="height: 30px; ">
+                          <input class="inputEnviar" type="submit" name="recuperar" value="Recuperar Contraseña" style="height: 30px; ">
                         </form>
 
                         <br><br>
@@ -143,16 +144,16 @@
 
                   <div class="container-fluid">
 
-                    <h2 style="text-align: center; margin-top: 100px;">Recupera tu cuenta</h2>
+                    <h2 style="text-align: center;">Recupera tu cuenta</h2>
                     <div class="row">
                       <div class="col-lg-4"></div>
                       <div class="col-lg-4" style="background-color: none; height: auto; text-align: none; margin-top: 50px; margin-bottom: 100px; text-align: center;">
                         
                         <form method="post" action="#">
-                          <label>Coloca la direccion de correo electronico registrada.</label>
+                          <label>Coloca la direccion de correo electronico registrada.</label><br><br>
                           <input type="email" name="email" placeholder="tu@correo.com">
                           <br><br>
-                          <input type="submit" name="recuperar" value="Recuperar Contraseña" style="height: 30px; ">
+                          <input class="inputEnviar" type="submit" name="recuperar" value="Recuperar Contraseña" style="height: 30px; ">
                         </form>
 
                         <br><br>
@@ -169,51 +170,43 @@
 ?>
 
 
-
-
-
-
-
-
-
-
-
-</section>
-
-
-<div class="container-fluid" style="background-color: #222222;">
-  <div id="contenedorFinal">
-
-        <div id="contenedorFormulario">
-
-          <form method="post" action="#">
-            <label style="font-size: 20px; color: #02feff;">Envianos un Mensaje</label>
-            <br><br>
-            <input type="text" value="" name="asunto" placeholder="Titulo del mensaje" style="width: 240px; height: 40px; font-size: 20px;">
-            <input type="email" value="" name="from" placeholder="Correo electronico" style="width: 240px; height: 40px; font-size: 20px; margin-top: 20px;">
-            <br><br>
-            <textarea name="mensaje" rows="10" cols="40" placeholder="Descripcion del mensaje" ></textarea>
-            <input style=" width: 120px; height: 30px; background-color: #999; margin-top: 10px" type="submit" name="enviar" value="Enviar">
-          </form>
-        </div>
-
-
-        <div id="ContenedorMenufoother">
-          <a class="afinal" href="aboutUs.php">About Us
-          <br><br>
-          <a class="afinal" target="_blank" href="cliente.pdf">Clientes</a>
-          <br><br>
-          <a class="afinal" target="_blank" href="proveedor.pdf">Proveedores</a>
-          <br><br>
-          <a class="afinal" target="_blank" href="terminosyCondiciones.pdf">Terminos y Condiciones</a>
-          <br><br>
-          <a class="afinal" target="_blank" href="prototipo/index.html">Prototipo</a>
-        </div>
-  </div>
 </div>
 
 
-<footer>Systems Admins C.A Todos los Derechos Registrados</footer>
+
+
+
+<div id="contacto">
+  <div class="contactanos">
+    <font class="tipo-letra-dies"><b>CONTÁCTANOS</b></font>
+    <p class="tipo-letra-once">Si tienes alguna duda o quieres contactar con nuestro equipo no dudes en enviarnos un mensaje, te atenderemos de inmediato</p>
+
+
+
+    <div class="redes-sociales">
+      <div class="numeros">
+        <font>
+          Email: info@fenet.com.ve
+          <br>
+          Telefono: +58 416 606 6328
+          <br>
+          WhatsApp: +58 416 606 6328
+        </font>
+      </div>
+      <div class="redes">
+        <font><b>Siguenos:</b></font>
+        <br>
+        <a href="https://www.instagram.com/appfenet/" target="_blank"><div class="social"><img class="icono-social" src="img/ionos/instagram.png"></div></a>
+        <a href="https://www.facebook.com/fenetSocial/" target="_blank"><div class="social"><img class="icono-social" src="img/ionos/facebook.png"></div></a>
+        <a href="https://twitter.com/appfenet" target="_blank"><div class="social"><img class="icono-social" src="img/ionos/twitter.png"></div></a>
+        <!--<a href="https://www.facebook.com/fenetSocial/" target="_blank"><div class="social"><img class="icono-social" src="img/ionos/linkedin.png"></div>-->
+      </div>
+    </div>
+    <br>  
+
+<!--
+    
+-->
 
 
 
@@ -221,10 +214,58 @@
 
 
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
-  </body>
+
+
+
+
+
+
+
+
+
+
+  </div>
+  <div class="escribenos" style="display: block;" id="escribenos">
+    <font class="tipo-letra-nueve"><b>Escríbenos tus dudas</b></font>
+    <br>
+    <sapm id="spamMensaje" style="color: red;"></sapm>
+    <form>
+      <input class="input-dos" type="text" name="" placeholder="Nombre y Apellido" id="nombreApellido">
+      <br>
+      <input class="input-dos" type="text" name="" placeholder="Telefono" id="mensajeTelefono">
+      <br>
+      <input class="input-dos" type="text" name="" placeholder="Correo Electronico" id="emailForm">
+      <br>
+      <textarea class="textarea-dos" name="mensaje" style ="color: white;" placeholder="Descripcion del mensaje" id="mensaje"></textarea>
+      <br>
+      <input class="input-enviar-dos" type="button" name="registrar" value="Enviar" id="enviarMensaje"/>
+    </form>
+  </div>
+
+
+  <div class="escribenos" id="mensajeEnviado" style="display: none; color: white;" id="none"> 
+    Su mensaje a sido Enviado con Exito. en breve nuestros asesores se pondran en contacto con usted...
+    <br><br>
+    <input class="inputEnviar" type="button"  value="Aceptar" id="enviarOtroMensaje"/>
+  </div>  
+
+</div>
+
+
+
+
+
+<footer><b>Systems Admins C.A Todos los Derechos Registrados</b></footer>
+
+
+
+
+
+
+<script
+ src="https://code.jquery.com/jquery-3.3.1.js"
+ integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+ crossorigin="anonymous"></script>
+
+</body>
 </html>

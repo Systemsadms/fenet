@@ -2,7 +2,7 @@
   //define ("salto","\n<br>\n");
   
   
-  
+
 
 
 $conexion=mysql_connect("localhost","root","");

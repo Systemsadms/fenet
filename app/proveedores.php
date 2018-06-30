@@ -76,7 +76,7 @@
 
     <title>Fe at Network!</title>
   </head>
-<body style=" background-color: #549cb4;">
+<body style=" background-color: #003e63;">
 
 
 
@@ -178,7 +178,7 @@
       $nombre   = mysql_result($ssql,0,"nombre");
       $apellido = mysql_result($ssql,0,"apellido");
       $telefono = mysql_result($ssql,0,"telefono");
-      $idcliente    =  mysql_result($ssqlId,0,"id");
+      $idcliente    =  mysql_result($ssql,0,"id");
 
 
 

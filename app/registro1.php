@@ -10,7 +10,100 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
     
 
+
+
+    <script>
+function validarFormulario(){
+
+    var txtNombre   = document.getElementById('nombre').value;
+    var txtApellido = document.getElementById('apellido').value;
+    var txtEmail    = document.getElementById('email').value;
+    var txtPass     = document.getElementById('pass').value;
+    var txtTelefono = document.getElementById('telefono').value;
+    var terminos    = document.getElementById("terminos").checked;
+
+    //Test campo obligatorio
+    if(txtNombre == null || txtNombre.length == 0){
+      var confirmar = document.getElementById('nombreCampo');
+      confirmar.innerHTML = "*Este Campo Es Obligatorio*";
+      return false;
+    }
+
+    //Test campo obligatorio
+    else if(txtApellido == null || txtApellido.length == 0){
+      var confirmar2 = document.getElementById('apellidoCampo');
+      confirmar2.innerHTML = "*Este Campo Es Obligatorio*";
+      return false;
+    }
+
+    //Test campo obligatorio
+    else if(txtEmail == null || txtEmail.length == 0){
+      var confirmar3 = document.getElementById('emailCampo');
+      confirmar3.innerHTML = "*Este Campo Es Obligatorio*";
+      return false;
+    }
+
+    //Test campo obligatorio
+    else if(txtPass == null || txtPass.length == 0){
+      var confirmar4 = document.getElementById('passCampo');
+      confirmar4.innerHTML = "*Este Campo Es Obligatorio*";
+      return false;
+    }
+
+    //Test campo obligatorio
+    else if(txtTelefono == null || txtTelefono.length == 0){
+      var confirmar5 = document.getElementById('telefonoCampo');
+      confirmar5.innerHTML = "*Este Campo Es Obligatorio*";
+      return false;
+    }
+
+    //Terminos obligatorio
+    else if (terminos == false){
+      var confirmar6 = document.getElementById('terminosCampo');
+      confirmar6.innerHTML = "*Acepte los terminos y condiciones del servicio*";
+      return false;
+    }
+    
+
+return true;
+ }
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <style>
+
+    .inputEstilo{
+      background-color: #f2f2f2;
+      width: 250px;
+      height: 30px;
+      border: #c4c4c4 solid 1px;
+      margin-top: 0px;
+      font-family: Georgia, Palatino, Palatino Linotype, Times, Times New Roman, serif;
+    }
+
+    .spamEstilo{
+      color: red; 
+      font-size: 13px;
+    }
+
     header{
       width: 382px; height:auto; 
       background-color: white; 
@@ -42,7 +135,7 @@
 
     <title>Fe at Network!</title>
   </head>
-<body style=" background-color: #549cb4;">
+<body style=" background-color: #003e63;">
 
 
 
@@ -79,23 +172,6 @@
 <?php
 
 
-/*
-              echo $idProveedor    = $_POST['id'];    
-              echo $servicio       = $_POST['servicio'];
-              echo $descripcion    = $_POST['descripcion'];
-              echo $direccionServ  = $_POST['direccionServ'];
-              echo $hora           = $_POST['hora'];
-              echo $fecha          = $_POST['fecha'];
-              echo $tipodeServicio = $_POST['tipodeServicio'];
-              echo $ciudad2         = $_POST['ciudad'];
-              echo $estado2        = $_POST['estado'];
-              echo $pais2           = $_POST['pais'];
-              echo $estatus         = "Solicitado";
-
-
-
-*/
-
 
 
       if(isset($_POST['registrar']))
@@ -109,10 +185,10 @@
             $apellido   = $_POST['apellido'];
             $nick      = $_POST['email'];
             $telefono   = $_POST['telefono'];
-            $direccion  = $_POST['direccion'];
+            $direccion  = "";
             $pais       = $_POST['pais'];
             $estado     = $_POST['estado'];
-            $ciudad     = $_POST['ciudad'];
+            $ciudad     = "";
             $pass       = $_POST['pass'];
 
 
@@ -126,11 +202,11 @@
 
                                 $tipodeServicio    = $_POST['tipodeServicio'];
 
-                                $pais    = $_POST['pais'];
+                                $paisServ    = $_POST['pais'];
 
-                                $ciudad    = $_POST['ciudad'];
+                                $ciudadServ    = $_POST['ciudad'];
 
-                                $estado    = $_POST['estado'];
+                                $estadoServ    = $_POST['estado'];
 
                                 $direccionServ    = $_POST['direccionServ'];
 
@@ -164,150 +240,77 @@
 
 
 
-<form action="#" method="post">
-
-
-<!--
-     <input type='hidden' name='servicio'       value='<?php echo $servicio ?>'>
-     <input type='hidden' name='descripcion'    value='<?php echo $descripcion ?>'>
-     <input type='hidden' name='direccionServ'      value='<?php echo $direccionServ ?>'>
-     <input type='hidden' name='fecha'          value='<?php echo $fecha ?>'>
-     <input type='hidden' name='hora'           value='<?php echo $hora ?>'>
-     <input type='hidden' name='estado2'         value='<?php echo $estado2 ?>'>
-     <input type='hidden' name='ciudad2'         value='<?php echo $ciudad2 ?>'>
-     <input type='hidden' name='tipodeServicio' value='<?php echo $tipodeServicio ?>'>
-     <input type='hidden' name='pais2'           value='<?php echo $pais2 ?>'>
-     <input type='hidden' name='id'             value='<?php echo $idProveedor ?>'>
--->
-
-
+<form action="#" method="post" onsubmit="return validarFormulario()">
 
 <label style="color: gray; ">Nombre</label>
-<input  type="text" spellcheck="false" name="nombre" style="
-    background-color: #f2f2f2;
-    width: 250px;
-    height: 30px;
-    border: #c4c4c4 solid 1px;
-    margin-top: 5px;
-    font-family: Georgia, Palatino, Palatino Linotype, Times, Times New Roman, serif;
-    "/>
-
-<label style="color: gray;">Apellido</label>
-<input  type="text"  id="apellido" name="apellido" tabindex="1" value="" style="
-    background-color: #f2f2f2;
-    width: 250px;
-    height: 30px;
-    border: #c4c4c4 solid 1px;
-    margin-top: 5px;
-    font-family: Georgia, Palatino, Palatino Linotype, Times, Times New Roman, serif;
-    "/>
-
-<label style="color: gray;">Correo Electronico</label>
-<input  type="text" id="email" name="email" tabindex="1" value="" style="
-    background-color: #f2f2f2;
-    width: 250px;
-    height: 30px;
-    border: #c4c4c4 solid 1px;
-    margin-top: 5px;
-    font-family: Georgia, Palatino, Palatino Linotype, Times, Times New Roman, serif;
-    "/>
-
-<label style="color: gray;">Llave o Contraseña</label>
-<input  type="text" id="pass" name="pass" tabindex="1" value="" style="
-    background-color: #f2f2f2;
-    width: 250px;
-    height: 30px;
-    border: #c4c4c4 solid 1px;
-    margin-top: 5px;
-    font-family: Georgia, Palatino, Palatino Linotype, Times, Times New Roman, serif;
-    "/>
-
-<label style="color: gray;">Telefono</label>
-<input  type="text" id="telefono" name="telefono" tabindex="1" value="" style="
-    background-color: #f2f2f2;
-    width: 250px;
-    height: 30px;
-    border: #c4c4c4 solid 1px;
-    margin-top: 5px;
-    font-family: Georgia, Palatino, Palatino Linotype, Times, Times New Roman, serif;
-    "/>
-<br><br>
-<label style="color: gray;">Pais</label>
- <select name="pais" style="
-                      background-color: #f2f2f2;
-                      width: 100px;
-                      height: 20px;
-                      border: #c4c4c4 solid 1px;
-                      font-family: Georgia, Palatino, Palatino Linotype, Times, Times New Roman, serif;
-                      "/>
-                  <option>Venezuela</option>
-                  </select>
-<br><br>
-<label style="color: gray;">Estado</label>
- <select name="estado" style="
-                      background-color: #f2f2f2;
-                      width: 90px;
-                      height: 20px;
-                      border: #c4c4c4 solid 1px;
-                      font-family: Georgia, Palatino, Palatino Linotype, Times, Times New Roman, serif;
-                      "/>
-                  <option >Amazonas</option>
-                  <option >Anzoategui</option>
-                  <option >Apure</option>
-                  <option >Aragua</option>
-                  <option >Barinas</option>
-                  <option >Bolivar</option>
-                  <option >Carabobo</option>
-                  <option >Cojedes</option>
-                  <option >Delta Amacuro</option>
-                  <option >Distrito Capital</option>
-                  <option >Falcon</option>
-                  <option >Guarico</option>
-                  <option >Lara</option>
-                  <option >Merida</option>
-                  <option >Miranda</option>
-                  <option >Monagas</option>
-                  <option >Nueva Esparta</option>
-                  <option >Portuguesa</option>
-                  <option >Sucre</option>
-                  <option >Tachira</option>
-                  <option >Trujillo</option>
-                  <option >Vargas</option>
-                  <option >Yaracuy</option>
-                  <option >Zulia</option>
-                  </select>
+        <input type="text" name="nombre" id="nombre" class="inputEstilo"/><br><span id="nombreCampo" class="spamEstilo"></span>
+        <br>
+        <label style="color: gray;">Apellido</label>
+        <input type="text" id="apellido" name="apellido" class="inputEstilo"/><br><span id="apellidoCampo" class="spamEstilo"></span>
+        <br>
+        <label style="color: gray;">Correo Electronico</label>
+        <input type="text" id="email" name="email" class="inputEstilo"/><br><span id="emailCampo" class="spamEstilo"></span>
+        <br>
+        <label style="color: gray;">Llave o Contraseña</label>
+        <input type="text" id="pass" name="pass" class="inputEstilo"/><br><span id="passCampo" class="spamEstilo"></span>
+        <br>
+        <label style="color: gray;">Telefono</label>
+        <input type="text" id="telefono" name="telefono" class="inputEstilo"/><br><span id="telefonoCampo" class="spamEstilo"></span>
+        <br>
+        <label style="color: gray;">Pais</label>
+        <select name="pais" style="
+                              background-color: #f2f2f2;
+                              width: 100px;
+                              height: 20px;
+                              border: #c4c4c4 solid 1px;
+                              font-family: Georgia, Palatino, Palatino Linotype, Times, Times New Roman, serif;
+                              "/>
+                          <option>Venezuela</option>
+                          </select>
+        <br><br>
+        <label style="color: gray;">Estado</label>
+         <select name="estado" style="
+                              background-color: #f2f2f2;
+                              width: 90px;
+                              height: 20px;
+                              border: #c4c4c4 solid 1px;
+                              font-family: Georgia, Palatino, Palatino Linotype, Times, Times New Roman, serif;
+                              "/>
+                          <option >Amazonas</option>
+                          <option >Anzoategui</option>
+                          <option >Apure</option>
+                          <option >Aragua</option>
+                          <option >Barinas</option>
+                          <option >Bolivar</option>
+                          <option >Carabobo</option>
+                          <option >Cojedes</option>
+                          <option >Delta Amacuro</option>
+                          <option >Distrito Capital</option>
+                          <option >Falcon</option>
+                          <option >Guarico</option>
+                          <option >Lara</option>
+                          <option >Merida</option>
+                          <option >Miranda</option>
+                          <option >Monagas</option>
+                          <option >Nueva Esparta</option>
+                          <option >Portuguesa</option>
+                          <option >Sucre</option>
+                          <option >Tachira</option>
+                          <option >Trujillo</option>
+                          <option >Vargas</option>
+                          <option >Yaracuy</option>
+                          <option >Zulia</option>
+                          </select>
 <br><br>
 
-    <label style="color: gray;">Ciudad</label>
-<input  type="text" id="ciudad" name="ciudad" tabindex="1" value="" style="
-    background-color: #f2f2f2;
-    width: 250px;
-    height: 30px;
-    border: #c4c4c4 solid 1px;
-    margin-top: 5px;
-    font-family: Georgia, Palatino, Palatino Linotype, Times, Times New Roman, serif;
-    "/>
 
-
-    <label style="color: gray;">Direccion</label>
-<input  type="text" id="direccion" name="direccion" tabindex="1" value="" style="
-    background-color: #f2f2f2;
-    width: 250px;
-    height: 30px;
-    border: #c4c4c4 solid 1px;
-    margin-top: 5px;
-    font-family: Georgia, Palatino, Palatino Linotype, Times, Times New Roman, serif;
-    "/>
-
-
-
-
-    <br><br>
     
-    <label><a href="http://fenet.com.ve/terminosyCondiciones.pdf">Terminos y Condiciones de Servicio</a></label><br>
+    <label><a href="http://fenet.com.ve/terminosyCondiciones.pdf" target="_blank">Terminos y Condiciones de Servicio</a></label><br>
     <div style="background-color: gray; padding: 5px; border-radius: 5px;">
-    <input  type="checkbox" name="terminos" value="terminos"> He leido y comprendido los terminos y condiciones de servicios
-  </div>
+    <input  type="checkbox" id="terminos" name="terminos" value="terminos"> He leido y comprendido los terminos y condiciones de servicios
+    </div>
+    <span id="terminosCampo" class="spamEstilo"></span>
+        
 
 
 
@@ -333,18 +336,7 @@
      <input type="hidden" name="estado" value="<?php echo $estado    = $_POST['estado']; ?>">
 
 
-
-
-
-
-
-
-
-
-
-
-
-    <input type="submit" name="registrar" value="Registrar" style="
+    <input name="registrar" type="submit" value="Submit" style="
       background-color: #c4c4c4;
       width: 250px;
       height: 30px;
@@ -377,7 +369,7 @@
                 }
 
 
-                 mysql_query ("INSERT INTO servicio VALUES ('','$servicio','$tipodeServicio','$descripcion','$direccionServ','$ciudad','$estado','$pais','$fecha','$hora','fenet','$id','solicitado')");
+                 mysql_query ("INSERT INTO servicio VALUES ('','$servicio','$tipodeServicio','$descripcion','$direccionServ','$ciudadServ','$estadoServ','$paisServ','$fecha','$hora','fenet','$id','solicitado')");
 
 
 
@@ -541,8 +533,6 @@
                           <div style="width: 100%; text-align: center; margin-bottom: 50px;"><H4>"Bienvenido a FENET"</H4></div>
                             Se ha enviado un email a la direccion de correo registrada con los datos de acceso a su cuenta. En caso de no encontrar el email mencionado por favor revise su bandeja de correos no deseados o badeja spam. <br><br>
 
-                             Haga click en el boton <b>Solicitar Servicio</b> para realizar su primera solicitud, estamos ansiosos por atenderle.
-
                              <br><br>
 
                              En caso de dudas, necesitar cualquier tipo de asesoramiento o apoyo tecnico, le invitamos a Contactar a Nuestros Asesores desde la opcion <b>Contactar Asesor</b>. Nuestros especialistas estaran atentos para guiarlo en el uso de la Plataforma en todo momento.
@@ -610,23 +600,7 @@
 
 
 
-<form action="#" method="post">
-
-
-<!--
-     <input type='hidden' name='servicio'       value='<?php echo $servicio ?>'>
-     <input type='hidden' name='descripcion'    value='<?php echo $descripcion ?>'>
-     <input type='hidden' name='direccionServ'      value='<?php echo $direccionServ ?>'>
-     <input type='hidden' name='fecha'          value='<?php echo $fecha ?>'>
-     <input type='hidden' name='hora'           value='<?php echo $hora ?>'>
-     <input type='hidden' name='estado2'         value='<?php echo $estado2 ?>'>
-     <input type='hidden' name='ciudad2'         value='<?php echo $ciudad2 ?>'>
-     <input type='hidden' name='tipodeServicio' value='<?php echo $tipodeServicio ?>'>
-     <input type='hidden' name='pais2'           value='<?php echo $pais2 ?>'>
-     <input type='hidden' name='id'             value='<?php echo $idProveedor ?>'>
--->
-
-
+<form action="#" method="post" onsubmit="return validarFormulario()">
 
 
 
@@ -649,135 +623,77 @@
      <input type="hidden" name="estado" value="<?php echo $estado    = $_POST['estado']; ?>">
 
 
-
-
 <label style="color: gray; ">Nombre</label>
-<input  type="text" spellcheck="false" name="nombre" style="
-    background-color: #f2f2f2;
-    width: 250px;
-    height: 30px;
-    border: #c4c4c4 solid 1px;
-    margin-top: 5px;
-    font-family: Georgia, Palatino, Palatino Linotype, Times, Times New Roman, serif;
-    "/>
-
-<label style="color: gray;">Apellido</label>
-<input  type="text"  id="apellido" name="apellido" tabindex="1" value="" style="
-    background-color: #f2f2f2;
-    width: 250px;
-    height: 30px;
-    border: #c4c4c4 solid 1px;
-    margin-top: 5px;
-    font-family: Georgia, Palatino, Palatino Linotype, Times, Times New Roman, serif;
-    "/>
-
-<label style="color: gray;">Correo Electronico</label>
-<input  type="text" id="email" name="email" tabindex="1" value="" style="
-    background-color: #f2f2f2;
-    width: 250px;
-    height: 30px;
-    border: #c4c4c4 solid 1px;
-    margin-top: 5px;
-    font-family: Georgia, Palatino, Palatino Linotype, Times, Times New Roman, serif;
-    "/>
-
-<label style="color: gray;">Llave o Contraseña</label>
-<input  type="text" id="pass" name="pass" tabindex="1" value="" style="
-    background-color: #f2f2f2;
-    width: 250px;
-    height: 30px;
-    border: #c4c4c4 solid 1px;
-    margin-top: 5px;
-    font-family: Georgia, Palatino, Palatino Linotype, Times, Times New Roman, serif;
-    "/>
-
-<label style="color: gray;">Telefono</label>
-<input  type="text" id="telefono" name="telefono" tabindex="1" value="" style="
-    background-color: #f2f2f2;
-    width: 250px;
-    height: 30px;
-    border: #c4c4c4 solid 1px;
-    margin-top: 5px;
-    font-family: Georgia, Palatino, Palatino Linotype, Times, Times New Roman, serif;
-    "/>
-<br><br>
-<label style="color: gray;">Pais</label>
- <select name="pais" style="
-                      background-color: #f2f2f2;
-                      width: 100px;
-                      height: 20px;
-                      border: #c4c4c4 solid 1px;
-                      font-family: Georgia, Palatino, Palatino Linotype, Times, Times New Roman, serif;
-                      "/>
-                  <option>Venezuela</option>
-                  </select>
-<br><br>
-<label style="color: gray;">Estado</label>
- <select name="estado" style="
-                      background-color: #f2f2f2;
-                      width: 90px;
-                      height: 20px;
-                      border: #c4c4c4 solid 1px;
-                      font-family: Georgia, Palatino, Palatino Linotype, Times, Times New Roman, serif;
-                      "/>
-                  <option >Amazonas</option>
-                  <option >Anzoategui</option>
-                  <option >Apure</option>
-                  <option >Aragua</option>
-                  <option >Barinas</option>
-                  <option >Bolivar</option>
-                  <option >Carabobo</option>
-                  <option >Cojedes</option>
-                  <option >Delta Amacuro</option>
-                  <option >Distrito Capital</option>
-                  <option >Falcon</option>
-                  <option >Guarico</option>
-                  <option >Lara</option>
-                  <option >Merida</option>
-                  <option >Miranda</option>
-                  <option >Monagas</option>
-                  <option >Nueva Esparta</option>
-                  <option >Portuguesa</option>
-                  <option >Sucre</option>
-                  <option >Tachira</option>
-                  <option >Trujillo</option>
-                  <option >Vargas</option>
-                  <option >Yaracuy</option>
-                  <option >Zulia</option>
-                  </select>
+        <input type="text" name="nombre" id="nombre" class="inputEstilo"/><br><span id="nombreCampo" class="spamEstilo"></span>
+        <br>
+        <label style="color: gray;">Apellido</label>
+        <input type="text" id="apellido" name="apellido" class="inputEstilo"/><br><span id="apellidoCampo" class="spamEstilo"></span>
+        <br>
+        <label style="color: gray;">Correo Electronico</label>
+        <input type="text" id="email" name="email" class="inputEstilo"/><br><span id="emailCampo" class="spamEstilo"></span>
+        <br>
+        <label style="color: gray;">Llave o Contraseña</label>
+        <input type="text" id="pass" name="pass" class="inputEstilo"/><br><span id="passCampo" class="spamEstilo"></span>
+        <br>
+        <label style="color: gray;">Telefono</label>
+        <input type="text" id="telefono" name="telefono" class="inputEstilo"/><br><span id="telefonoCampo" class="spamEstilo"></span>
+        <br>
+        <label style="color: gray;">Pais</label>
+        <select name="pais" style="
+                              background-color: #f2f2f2;
+                              width: 100px;
+                              height: 20px;
+                              border: #c4c4c4 solid 1px;
+                              font-family: Georgia, Palatino, Palatino Linotype, Times, Times New Roman, serif;
+                              "/>
+                          <option>Venezuela</option>
+                          </select>
+        <br><br>
+        <label style="color: gray;">Estado</label>
+         <select name="estado" style="
+                              background-color: #f2f2f2;
+                              width: 90px;
+                              height: 20px;
+                              border: #c4c4c4 solid 1px;
+                              font-family: Georgia, Palatino, Palatino Linotype, Times, Times New Roman, serif;
+                              "/>
+                          <option >Amazonas</option>
+                          <option >Anzoategui</option>
+                          <option >Apure</option>
+                          <option >Aragua</option>
+                          <option >Barinas</option>
+                          <option >Bolivar</option>
+                          <option >Carabobo</option>
+                          <option >Cojedes</option>
+                          <option >Delta Amacuro</option>
+                          <option >Distrito Capital</option>
+                          <option >Falcon</option>
+                          <option >Guarico</option>
+                          <option >Lara</option>
+                          <option >Merida</option>
+                          <option >Miranda</option>
+                          <option >Monagas</option>
+                          <option >Nueva Esparta</option>
+                          <option >Portuguesa</option>
+                          <option >Sucre</option>
+                          <option >Tachira</option>
+                          <option >Trujillo</option>
+                          <option >Vargas</option>
+                          <option >Yaracuy</option>
+                          <option >Zulia</option>
+                          </select>
 <br><br>
 
-    <label style="color: gray;">Ciudad</label>
-<input  type="text" id="ciudad" name="ciudad" tabindex="1" value="" style="
-    background-color: #f2f2f2;
-    width: 250px;
-    height: 30px;
-    border: #c4c4c4 solid 1px;
-    margin-top: 5px;
-    font-family: Georgia, Palatino, Palatino Linotype, Times, Times New Roman, serif;
-    "/>
 
-
-    <label style="color: gray;">Direccion</label>
-<input  type="text" id="direccion" name="direccion" tabindex="1" value="" style="
-    background-color: #f2f2f2;
-    width: 250px;
-    height: 30px;
-    border: #c4c4c4 solid 1px;
-    margin-top: 5px;
-    font-family: Georgia, Palatino, Palatino Linotype, Times, Times New Roman, serif;
-    "/>
-
-    <br><br>
     
-    <label><a href="http://fenet.com.ve/terminosyCondiciones.pdf">Terminos y Condiciones de Servicio</a></label><br>
+    <label><a href="http://fenet.com.ve/terminosyCondiciones.pdf" target="_blank">Terminos y Condiciones de Servicio</a></label><br>
     <div style="background-color: gray; padding: 5px; border-radius: 5px;">
-    <input  type="checkbox" name="terminos" value="terminos"> He leido y comprendido los terminos y condiciones de servicios
-  </div>
+    <input  type="checkbox" id="terminos" name="terminos" value="terminos"> He leido y comprendido los terminos y condiciones de servicios
+    </div>
+    <span id="terminosCampo" class="spamEstilo"></span>
 
 
-
-    <input type="submit" name="registrar" value="Registrar" style="
+    <input name="registrar" type="submit" value="Submit" style="
       background-color: #c4c4c4;
       width: 250px;
       height: 30px;
