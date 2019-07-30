@@ -16,21 +16,21 @@
     <style>
 
     header{
-      width: 382px; height:auto; 
-      background-color: white; 
-      margin: 0 auto; 
+      width: 382px; height:auto;
+      background-color: white;
+      margin: 0 auto;
       border-top-right-radius:30px;
-      border-top-left-radius:30px;  
-      border-top:3px solid black; 
-      border-right:3px solid black; 
+      border-top-left-radius:30px;
+      border-top:3px solid black;
+      border-right:3px solid black;
       border-left:3px solid black;}
 
     section{
-      width: 382px; 
-      height:auto; background-color: white; 
-      margin: 0 auto; 
+      width: 382px;
+      height:auto; background-color: white;
+      margin: 0 auto;
       border-bottom-left-radius:30px;
-      border-bottom-right-radius:30px; 
+      border-bottom-right-radius:30px;
       border-right:3px solid black;
       border-left:3px solid black;
       border-bottom: 3px solid black;}
@@ -50,7 +50,7 @@
 
     section{width: 100%;}
 
-    } 
+    }
     </style>
 
     <title>Fe at Network!</title>
@@ -98,10 +98,10 @@
 ?>
 
       <form method="post" action="direccionIndex.php"  id="crearNuevoT" style="text-align: center; padding-bottom: 64px;">
-     
+
      <input type="hidden" name="servicio" value="<?php echo $servicio    = $_POST['servicio'];  ?>">
      <input type="hidden" name="tipodeServicio" value="general">
-        
+
 
         <?php
         /*
@@ -173,7 +173,7 @@
                       height: 20px;
                       border: #c4c4c4 solid 1px;
                       font-family: Georgia, Palatino, Palatino Linotype, Times, Times New Roman, serif;
-                      "/>  
+                      "/>
                   <option>Autobuses</option>
                   <option>Viajes</option>
                   <option>Mudansas</option>
@@ -193,7 +193,7 @@
                       height: 20px;
                       border: #c4c4c4 solid 1px;
                       font-family: Georgia, Palatino, Palatino Linotype, Times, Times New Roman, serif;
-                      "/>  
+                      "/>
                   <option>General</option>
                   </select>
 
@@ -211,7 +211,7 @@
                       height: 20px;
                       border: #c4c4c4 solid 1px;
                       font-family: Georgia, Palatino, Palatino Linotype, Times, Times New Roman, serif;
-                      "/>  
+                      "/>
                   <option>General</option>
                   </select>
 
@@ -228,7 +228,7 @@
                       height: 20px;
                       border: #c4c4c4 solid 1px;
                       font-family: Georgia, Palatino, Palatino Linotype, Times, Times New Roman, serif;
-                      "/>  
+                      "/>
                   <option>General</option>
                   </select>
 
@@ -245,7 +245,7 @@
                       height: 20px;
                       border: #c4c4c4 solid 1px;
                       font-family: Georgia, Palatino, Palatino Linotype, Times, Times New Roman, serif;
-                      "/>  
+                      "/>
                   <option>General</option>
                   </select>
 
@@ -262,7 +262,7 @@
                       height: 20px;
                       border: #c4c4c4 solid 1px;
                       font-family: Georgia, Palatino, Palatino Linotype, Times, Times New Roman, serif;
-                      "/>  
+                      "/>
                   <option>General</option>
                   </select>
 
@@ -279,7 +279,7 @@
                       height: 20px;
                       border: #c4c4c4 solid 1px;
                       font-family: Georgia, Palatino, Palatino Linotype, Times, Times New Roman, serif;
-                      "/>  
+                      "/>
                   <option>General</option>
                   </select>
 
@@ -296,9 +296,9 @@
                       height: 20px;
                       border: #c4c4c4 solid 1px;
                       font-family: Georgia, Palatino, Palatino Linotype, Times, Times New Roman, serif;
-                      "/>  
+                      "/>
                   <option>General</option>
-                  
+
                   </select>
 
           <?php
@@ -311,7 +311,7 @@
 
                                 -->
 
-             <?php                   
+             <?php
           }
             */
         ?>
@@ -321,9 +321,9 @@
     <script type="text/javascript">
 
       $(function(){
-      
+
           $("#descripcionServicio").click(function(){
-  
+
              var sera = $("#descServicio").css("display");
 
              if (sera == "none"){
@@ -337,13 +337,13 @@
 
               //$("#descServicio").css("display", "block");
 
-              
 
-             
+
+
             })
 
       });
-      
+
 
     </script>
 
@@ -364,7 +364,7 @@
 </div>
 
 <div id ="descServicio" style="height:auto; background-color: #f2f2f2; margin-top: 20px; display: none;">
-  
+
 
   <?php
   include ("cnx.php");
@@ -387,18 +387,18 @@ mysql_close($conexion);
 
 
 <br><br>
-        <label id="validarDescripcion"><b>Describe el Servicio</b></label>
+        <label id="validarDescripcion"><b>Describe the Service</b></label>
 
         <br><br>
 
 
-        
-        <textarea rows="4" cols="25" name="descripcion" placeholder="De que se trata el servicio" style="
+
+        <textarea rows="4" cols="25" name="descripcion" placeholder="What is the service about?" style="
         background-color: #f2f2f2;
         width: 240px;
-        border: #c4c4c4 solid 1px;       
+        border: #c4c4c4 solid 1px;
         font-family: Georgia, Palatino, Palatino Linotype, Times, Times New Roman, serif;
-      
+
         "></textarea>
 
 <br>
@@ -417,8 +417,8 @@ mysql_close($conexion);
 <br><br>
 
 
-<div style="color: gray;">Indica la Fecha y Hora de Servicio</div><br>
-   <label style="color: gray;">Fecha:</label>
+<div style="color: gray;">Indicates the Date and Time of Service</div><br>
+   <label style="color: gray;">Date:</label>
     <input  type="text" spellcheck="false" name="fecha"  value="<?php echo $fecha ?>" style="
         background-color: #f2f2f2;
         width: 86px;
@@ -431,7 +431,7 @@ mysql_close($conexion);
 
 
 
-      <label style="color: gray;">Hora:</label>
+      <label style="color: gray;">Time:</label>
     <input  type="text" spellcheck="false" name="hora" value="<?php echo $hora ?>" style="
         background-color: #f2f2f2;
         width: 86px;
@@ -457,7 +457,7 @@ mysql_close($conexion);
               font-size: 17px;
               padding-top: 3px;
 
-              ">Continuar</a>
+              ">Continue</a>
     </div>
 
 </form>
@@ -470,7 +470,7 @@ mysql_close($conexion);
 <a href="asesor.php"><div class="asesor">Contactar Asesor</div></a>
 
 </secion>
-    
+
 
 
 
@@ -492,7 +492,7 @@ mysql_close($conexion);
 
 
         if(text==0) {
-            document.forms['crearNuevoT'].descripcion.focus();   
+            document.forms['crearNuevoT'].descripcion.focus();
             document.getElementById("validarDescripcion").innerHTML = "Descripcion:(campo obligatorio)*";
             document.getElementById("validarDescripcion").style.color = "red";
             return false;
@@ -507,6 +507,6 @@ mysql_close($conexion);
 
 
 
-    
+
   </body>
 </html>

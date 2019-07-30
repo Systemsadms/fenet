@@ -1,0 +1,602 @@
+ @charset "utf-8";
+/* CSS Document */
+
+
+
+
+
+@media (max-width:1230px){
+.divServicios{
+	height:1400px;
+	text-align:center;
+	padding-top:50px;
+
+}
+}
+
+@media (max-width:830px){
+.divServicios{
+	height:2050px;
+	text-align:center;
+	padding-top:50px;
+
+}
+}
+
+
+
+/***************************************** (950px)  ******************************************/
+@media (max-width:950px){
+
+section{
+	height: auto;
+}
+
+.oculto{
+	display: inline;
+}
+
+.visto{
+	display: none;
+}
+
+.quienesSomos{
+	width: 100%;
+	height: auto;
+	float: none;
+}
+
+.titulo{
+	width: 100%;
+	height: auto;
+	margin-top: 0px;
+}
+
+.caracteristicas{
+	height: auto;
+	margin-top: 50px;
+	margin-bottom: 0px;
+}
+
+.registro{
+	width: 100%;
+	height: 800px;
+	float: none;
+	padding-top:5px;
+}
+
+.margin-left{
+	margin-left: 30px;
+
+}
+
+.inline-block{
+	margin-bottom: 100px;
+}
+
+.inline-block-dos{
+	margin-bottom: 80px;
+
+}
+
+
+#proveedor{
+	width: 100%;
+	height: auto;
+}
+
+.titulo-dos{
+	width: 100%;
+	height: auto;
+	padding-left: 0px;
+	text-align: center;
+}
+
+.textoConviertete{
+	width: 100%;
+	height: auto;
+	padding-right: 0px;
+	float: none;
+}
+
+.imagenConviertete{
+	width: 100%;
+	height: 620px;
+	float: none;
+	padding-top: 60px;
+}
+
+
+.img-telefono{
+	margin: 0px auto;
+}
+
+.text-derecha{text-align: center;}
+
+.pasosProveedor{
+	width: 300px;
+	height: 130px;
+	padding-left: 0px;
+	margin: 10px auto;
+}
+
+
+
+.imagen-fondo{
+	background-image: none;
+	background-color: #003e63;
+	padding-top: 20px;
+}
+
+
+
+#contacto{
+	width: 100%;
+	height: auto;
+	background-color: black;
+	padding-bottom: 50px;
+}
+
+.contactanos{
+	width: 100%;
+	height: auto;
+	float: none;
+	padding-top: 30px;
+	padding-left: 50px;
+}
+
+.escribenos{
+	width: 400px;
+	float: none;
+	margin-left: 0px;
+	margin: 0 auto;
+}
+
+
+
+
+
+
+
+}
+/***************************************** FIN (950px) ****************************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width:860px){
+.video-contenedor{
+	width: 100%;
+	height:500px;
+	margin: 0px auto;
+
+}
+
+.iframe-video{
+	width: 100%;
+	height: 500px;
+	margin: 0 auto;
+}
+
+#dondeFunciona{
+	height: 500px;
+}
+
+}
+
+
+
+
+
+@media (max-width:600px){
+#dondeFunciona{
+	padding-top: 80px;
+	height: 400px;
+
+}
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width:500px){
+
+
+
+
+.quienesSomos{
+	width: 100%;
+	height: auto;
+	float: none;
+}
+
+.titulo{
+	width: 100%;
+	height: auto;
+	margin-top: 0px;
+	text-align: center;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+
+.caracteristicas{
+	width: 100%;
+	margin-left: 0;
+	height: auto;
+	margin-top: 50px;
+	text-align: center;
+}
+
+.inline-block{
+	display: inline-block;
+	width: 200px;
+	height: 100px;
+	margin-bottom: 100px;
+}
+
+.imagen-crctc{
+	width: 30px;
+	height: 30px;
+	margin-right: 10px;
+	float: left;
+}
+
+.texto-crctc{
+	width: 150px;
+	height: 100px;
+	margin-right: 10px;
+
+}
+
+
+
+.imagenConviertete{
+	height: 550px;
+}
+
+
+.solicitar-servicio{
+	width: 45%;
+	float: none;
+	margin: 30px auto;
+}
+
+.descargar-app{
+	width: 45%;
+	margin-left: 0px;
+	margin: 10px auto;
+	float: none;
+}
+
+
+.tamano-telefono{
+	width: 300px;
+	height: 380px;
+}
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width:430px){
+
+section{
+	height: auto;
+}
+
+#banner{
+	font-size: 23px;
+	line-height: 30px;
+	height: 480px;
+}
+
+#video{
+	height: 270px;
+	padding-top: 30px;
+}
+
+.tipo-letra-baner{
+	font-size: 15px;
+
+}
+
+.formulario{
+	height: 650px;
+}
+
+.tipo-letra{
+	font-size: 20px;
+	color: #5c5c5c;
+}
+
+.tipo-letra-dos{
+	font-size: 20px;
+	color: #1d120e;
+}
+
+
+.tipo-letra-nueve{
+	font-size: 20px;
+	color: #053b61;
+}
+
+.franjaRoja{
+	font-size: 20px;
+	padding-top: 25px;
+}
+
+.registro{
+	height: 800px;
+}
+
+.solicitar-servicio{
+	width: 200px;
+	float: none;
+	margin: 30px auto;
+}
+
+.descargar-app{
+	width: 200px;
+	margin-left: 0px;
+	margin: 10px auto;
+	float: none;
+}
+
+
+.formulario{
+	width: 100%;
+}
+
+.img-telefono{
+	width: 100%;
+}
+
+.pasosProveedor{
+	width: 100%;
+}
+
+.separador{
+	width: 100%;
+}
+
+
+.bottones-banner{
+	width: 100%;
+	height: auto;
+	margin: 30px auto;
+	font-family: HelveticaNeueMenu;
+}
+
+
+.inline-block{
+	display: inline-block;
+	width: 200px;
+	height: 100px;
+	margin-bottom: 100px;
+}
+
+.imagen-crctc{
+	width: 30px;
+	height: 30px;
+	margin-right: 10px;
+	float: left;
+}
+
+.inline-block-dos{
+	margin-top: 0px;
+	margin-bottom: 80px;
+}
+
+.texto-crctc{
+	width: 150px;
+	height: 100px;
+	margin-right: 10px;
+	float: left;
+}
+
+.video-contenedor{
+	width: 100%;
+	height:200px;
+	margin: 0px auto;
+
+}
+
+.iframe-video{
+	width: 100%;
+	height: 200px;
+	margin: 0 auto;
+}
+
+
+
+
+.contactanos{
+	width: 100%;
+	height: auto;
+	float: none;
+	padding-left: 0px;
+	text-align: center;
+}
+
+.tipo-letra-dies{
+	font-size: 25px;
+}
+
+.escribenos{
+	width: 100%;
+	float: none;
+	margin-left: 0px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+
+
+.redes-sociales{
+	margin-bottom: 30px;
+}
+
+.numeros{
+	margin:60px auto;
+}
+
+.redes{
+	margin: 60px auto;
+	width: 230px;
+	height: 100px;
+
+}
+
+.social{
+	margin-left: 15px;
+}
+
+.input-dos{
+    width: 100%;
+}
+
+.textarea-dos{
+    width: 100%;
+}
+
+.input-enviar-dos{
+	width: 100%;
+}
+
+.inline-terminos{
+	width: 100%;
+}
+
+
+
+.imagen-geoma{
+	width: 300px;
+	height: 100px;
+}
+
+.img-publi-dos{
+	margin-left: 0px;
+	margin-bottom: 40px;
+}
+
+
+#dondeFunciona{
+	height: 350px;
+	padding-top: 100px;
+}
+
+.tipo-letra-siete{
+	font-size: 25px;
+}
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+@media (max-width:330px){
+
+.tamano-telefono{
+	width: 100%;
+	height: 350px;
+}
+
+
+#dondeFunciona{
+	height: 250px;
+	padding-top: 30px;
+}
+
+.tipo-letra-siete{
+	font-size: 25px;
+}
+
+
+.img-publi{
+	margin-left: 50px;
+	margin-bottom: 40px;
+}
+
+.tipo-letra-ocho{
+	font-size: 12px;
+	color: white;
+	margin-top: 5px;
+	margin-top: 50px;
+}
+
+.imagen-geoma{
+	width: 250px;
+	height: 100px;
+}
+
+}

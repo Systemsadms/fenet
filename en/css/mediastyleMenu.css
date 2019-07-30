@@ -1,0 +1,44 @@
+ @charset "utf-8";
+/* CSS Document */
+
+
+/***************************************** (950px)  ******************************************/
+@media (max-width:800px){
+
+nav{
+	background-color: none;
+}
+
+#opciones{
+	display: none;
+}
+
+
+
+
+#menuSmart{
+	display: none;
+	background-color: #00314e;
+	text-align: center;
+}
+
+#iconSmart{
+	display: block;
+	margin-top: 10px;
+	margin-right: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

@@ -1,0 +1,1 @@
+[15-Feb-2019 12:33:24 America/Caracas] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/fenetco1/public_html/registro.php on line 22

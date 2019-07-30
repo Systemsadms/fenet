@@ -1,0 +1,54 @@
+body{
+	background-image: url("img/caracas.jpg");
+	background-color: none;
+	background-size: 100% 100%;
+	background-size:-ms- 100% 100%;
+	background-repeat: none;
+	background-repeat: no-repeat;
+	font-family: HelveticaNeue;
+	margin: 0;
+	padding: 0;
+}
+
+#contenedor{
+
+	height:100vh;
+	width: 100%;
+	color:white;
+	display: flex;
+	display:-ms-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#contenedor2{
+	text-align: center;
+	height:auto;
+	width: 100%;
+	background-color:none;
+	padding-top: 150px;
+}
+
+.idioma{
+	border: 1px solid white;
+	height: 30px;
+	margin-top: 10px;
+	text-align: center;
+	padding-top: 5PX;
+	box-sizing: border-box;
+}
+
+.idioma:hover{
+	background-color: red;
+	cursor: pointer;
+}
+
+a:link{
+	color:white;
+	text-decoration:none;
+}
+
+a:visited{
+	color:white;
+	text-decoration:none;
+}
